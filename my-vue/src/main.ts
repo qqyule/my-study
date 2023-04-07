@@ -8,4 +8,4 @@ bootstrap(app)
   .then(() => {
     app.mount('#app')
   })
-  .catch((err) => console.error('COOL-ADMIN 启动失败', err))
+  .catch((err) => console.error('项目启动失败', err))
