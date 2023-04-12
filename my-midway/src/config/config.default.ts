@@ -2,7 +2,7 @@ import { MidwayConfig } from '@midwayjs/core';
 
 export default {
   // use for cookie sign key, should change to your own and keep security
-  keys: '1680836661819_8252',
+  keys: '1681285369477_1721',
   koa: {
     port: 7001,
   },

@@ -1,1 +1,2 @@
-export * from "./hmr";
+export * from './hmr'
+export * from './browser'

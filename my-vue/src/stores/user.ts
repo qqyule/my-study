@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { storage } from '@/utils'
 import { config } from '@/config'
 import { service } from '@/service'
-import router from '@/router'
+import { router } from '@/router'
 
 // 本地缓存
 const data = storage.info()
