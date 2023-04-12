@@ -1,16 +1,19 @@
-import { Configuration, App } from '@midwayjs/core';
+import { Configuration, App } from '@midwayjs/decorator';
 import * as koa from '@midwayjs/koa';
 import * as validate from '@midwayjs/validate';
+import * as orm from '@midwayjs/typeorm';
 import * as info from '@midwayjs/info';
 import { join } from 'path';
 // import { DefaultErrorFilter } from './filter/default.filter';
 // import { NotFoundFilter } from './filter/notfound.filter';
 import { ReportMiddleware } from './middleware/report.middleware';
-
+import * as cool from '@cool-midway/core';
 @Configuration({
   imports: [
     koa,
+    orm,
     validate,
+    cool,
     {
       component: info,
       enabledEnvironment: ['local'],

@@ -44,7 +44,7 @@ export const config: Config = {
 	// 调试
 	test: {
 		token: "",
-		mock: true,
+		mock: false,
 		eps: true
 	},
 
