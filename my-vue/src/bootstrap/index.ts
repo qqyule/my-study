@@ -1,6 +1,6 @@
 import { createPinia } from 'pinia'
 import type { App } from 'vue'
-import router from '@/router'
+import { router } from '@/router'
 import '@/assets/main.css'
 import { createModule } from './module'
 import { createEps } from './eps'
@@ -13,10 +13,10 @@ export async function bootstrap(app: App) {
   app.use(router)
 
   // 模块
-  // const {eventLoop} = createModule(app)
+  const { eventLoop } = createModule(app)
 
   // eps
-  // await createEps()
+  await createEps()
   // 加载
-  // Loading.set([eventLoop()])
+  Loading.set([eventLoop()])
 }

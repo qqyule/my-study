@@ -1,11 +1,11 @@
 import axios from "axios";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
-// import { ElMessage } from "element-plus";
+import { ElMessage } from "element-plus";
 import { isDev, config } from "@/config";
 import { storage } from "@/utils";
 import { useStore } from "@/stores";
-import router  from "@/router";
+import { router } from "@/router";
 
 const request = axios.create({
 	timeout: 30000,
@@ -57,7 +57,7 @@ request.interceptors.request.use(
 			if (storage.isExpired("token")) {
 				// 判断 refreshToken 是否过期
 				if (storage.isExpired("refreshToken")) {
-					// ElMessage.error("登录状态已失效，请重新登录");
+					ElMessage.error("登录状态已失效，请重新登录");
 					user.logout();
 				} else {
 					// 是否在刷新中
@@ -130,7 +130,7 @@ request.interceptors.response.use(
 			} else {
 				if (isDev) {
 					if (c.url != `${config.baseUrl}/`) {
-						// ElMessage.error(`${c.url} ${status}`);
+						ElMessage.error(`${c.url} ${status}`);
 					}
 				} else {
 					switch (status) {

@@ -8,7 +8,7 @@ export const useAppStore = defineStore('app', function () {
   const { browser, onScreenChange } = useBrowser()
 
   // 基本信息
-  const info = reactive({
+  const info: Object = reactive({
     ...config.app
   })
 

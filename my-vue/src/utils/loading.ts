@@ -7,7 +7,9 @@ export const Loading = {
 	async set(list: any[]) {
 		try {
 			await Promise.all(list);
-		} catch (e) {}
+		} catch (e) {
+			console.log(e)
+		}
 		this.resolve();
 	},
 

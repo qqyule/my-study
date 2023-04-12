@@ -9,7 +9,7 @@ export const isDev = import.meta.env.MODE === "development";
 export const config: Config = {
 	// 项目信息
 	app: {
-		name: "COOL-ADMIN",
+		name: "我的管理后台",
 
 		// 菜单
 		menu: {
@@ -26,7 +26,7 @@ export const config: Config = {
 			// 转场动画
 			transition: "slide",
 			// 首页组件
-			home: () => import("@/views/HomeView.vue")
+			home: () => import("@/views/home/index.vue")
 		},
 
 		// 字体图标库
@@ -44,8 +44,8 @@ export const config: Config = {
 	// 调试
 	test: {
 		token: "",
-		mock: false,
-		eps: false
+		mock: true,
+		eps: true
 	},
 
 	// 当前环境

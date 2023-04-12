@@ -13,7 +13,7 @@ export function firstUpperCase(value: string): string {
 export function readFile(name: string) {
 	try {
 		return fs.readFileSync(name, "utf8");
-	} catch (e) {}
+	} catch (e) { }
 
 	return "";
 }
@@ -323,6 +323,30 @@ export function sleep(duration: number) {
 			resolve(true);
 		}, duration);
 	});
+}
+
+// URL路径修复
+export function revisePath(path: string) {
+	if (!path) {
+		return "";
+	}
+
+	return path[0] == "/" ? path : `/${path}`;
+}
+
+// 增加css文件
+export function createLink(url: string, id?: string) {
+	const link = document.createElement("link");
+	link.href = url;
+	link.type = "text/css";
+	link.rel = "stylesheet";
+	if (id) {
+		link.id = id;
+	}
+
+	setTimeout(() => {
+		document.getElementsByTagName("head").item(0)?.appendChild(link);
+	}, 0);
 }
 
 export { storage };

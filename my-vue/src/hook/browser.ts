@@ -1,6 +1,6 @@
 import { useEventListener } from '@vueuse/core'
 import { reactive, watch } from 'vue'
-import { getBrowser } from '@//utils'
+import { getBrowser } from '@/utils'
 
 const browser = reactive(getBrowser())
 const events: (() => void)[] = []
@@ -15,6 +15,10 @@ watch(
 useEventListener(window, 'resize', () => {
   Object.assign(browser, getBrowser())
 })
+/**
+ * @description 判断是否是移动端
+ * @returns browser
+ */
 export function useBrowser() {
   return {
     browser,
